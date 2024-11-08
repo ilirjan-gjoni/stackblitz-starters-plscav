@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "alpinejs": "^3.14.3",
+    "servor": "^4.0.2"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}

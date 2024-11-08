@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Alpine App</title>
+  </head>
+  <body>
+    <div x-data="{ open: false }">
+      <button @click="open = ! open">Toggle Content</button>
+      <div x-show="open" x-transition>Content...</div>
+    </div>
+
+  </br></br>
+
+    <button x-data="{ open: true }" @click="open = false" x-show="open">
+      Hide Me
+    </button>
+
+  </br></br>
+
+    <div x-data="{ message: 'Hello' }" x-init="message = 'Hello, Alpine!'">
+      <span x-text="message"></span>
+    </div>
+
+  </br></br>
+
+    <div x-data="{ placeholder: 'Type here' }">
+      <input type="text" x-bind:placeholder="placeholder" />
+    </div>
+
+  </br></br>
+
+    <div x-data="{ url: 'https://example.com' }">
+      <a x-bind:href="url">Go to Example</a>
+    </div>
+
+  </br></br>
+
+    <div x-data>
+      <button @click="alert('Hello World!')">Say Hi</button>
+    </div>
+
+  </br></br>
+
+   <div x-data="{ message: '', charCount: 0 }">
+      <label for="messageInput">Message:</label>
+      <input
+        type="text"
+        id="messageInput"
+        x-model="message"
+        @input="charCount = message.length"
+        placeholder="Type your message here"
+      />
+      <p>Character count: <span x-text="charCount"></span></p>
+    </div>
+
+
+
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
